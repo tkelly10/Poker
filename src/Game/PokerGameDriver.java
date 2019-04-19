@@ -14,7 +14,7 @@ public class PokerGameDriver {
         cards = new ArrayList();
     
 
-        cards = new ArrayList<>();
+      
 
         System.out.println("deck size: " + deck.cards.size());
 

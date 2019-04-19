@@ -151,7 +151,9 @@ public class Hand implements HandChecker {
             public boolean isStraightFlush(List<Card> cards){
                 this.isStraightFlush = false;
 
-                if(this.isStraight && this.isFlush)
+                isFlush(cards);
+                isStraight(cards);
+                if(isStraight && isFlush)
                 {
                     this.isStraightFlush = true;
                 }
@@ -196,7 +198,10 @@ public class Hand implements HandChecker {
             @Override
             public boolean isFullHouse(List<Card> cards){
 
-                    if(this.isPair && this.isThreeOfAKind){
+                isPair(cards);
+                isThreeOfAKind(cards);
+                
+                    if(isPair && isThreeOfAKind){
                         this.isFullHouse= true;
                     }
 
@@ -207,7 +212,7 @@ public class Hand implements HandChecker {
             public boolean isTwoPair(List<Card> cards){
 
                 this.isTwoPair = false;
-
+                isPair(cards);
 
                     if(this.pairCount == 2){
                         this.isTwoPair= true;
